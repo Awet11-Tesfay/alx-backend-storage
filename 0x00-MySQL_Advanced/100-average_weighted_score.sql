@@ -1,5 +1,5 @@
 -- sql script creates a stored procedure and taking 1 input
--- linked to an existing users
+-- linked to an exiting users and calculate average
 DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUser;
 DELIMITER $$
 CREATE PROCEDURE ComputeAverageWeightedScoreForUser(user_id INT)
