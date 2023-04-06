@@ -1,4 +1,4 @@
--- Sql script that creates a table "users" with the ff requrements
+-- Sql script that creates a table called users with the ff requrements
 -- reqirements(id, email, name)
 CREATE TABLE IF NOT EXISTS users (
     id INT Not NULL AUTO_INCREMENT PRIMARY KEY,
