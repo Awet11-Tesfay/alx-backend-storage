@@ -4,5 +4,5 @@ CREATE TRIGGER email_set_valid BEFORE UPDATE ON users
 FOR EACH ROW
 IF NEW.email <> OLD.email
 THEN
-SET NEW.valid_email = 0;
+    SET NEW.valid_email = 0;
 END IF;
