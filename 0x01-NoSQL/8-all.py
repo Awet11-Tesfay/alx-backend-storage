@@ -4,8 +4,7 @@
 
 def list_all(mongo_collection):
     """ if there is not document in the collection return empty list"""
-    mongo = mongo_collection.find().count()
+    mongo = mongo_collection.find()
     if mongo_collection.count() == 0:
         return []
-    else:
-        return mongo
+    return mongo_collection.find()
