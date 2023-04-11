@@ -3,6 +3,7 @@
 
 
 def schools_by_topic(mongo_collection, topic):
+    """ where can i learn python """
     do = mongo_collection.find({"topics": topic})
     list = [x for x in do]
     return list
