@@ -20,4 +20,3 @@ if __name__ == "__main__":
     )
 
     print(f'{status_check} status check')
-    
