@@ -6,9 +6,9 @@ def top_students(mongo_collection):
     """ the average score must be  item returns with key averageScore """
     db = mongo_collection.aggregate([
         {
-            "$mong": {
+            "$project": {
                 "name": "$name",
-                "averageScore": {"$average": "$topics.score"}
+                "averageScore": {"$avg": "$topics.score"}
             }
         },
         {"$sort": {"averageScore": -1}}
