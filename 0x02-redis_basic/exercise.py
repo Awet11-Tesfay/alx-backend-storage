@@ -6,13 +6,13 @@ from typing import Union, Optional, Callable
 from uuid import uuid
 
 
-def count_calls(method: callable) -> callable:
-    """ create store method """
-    key = method.__qualname__
+class Cache:
+    """ class cache """
+    def __init__(self):
+        self._redis = redis.Redis()
+        self._redis.flushdb()
 
-    @wraps(method)
-    def wrapper(self, *abc, **kwabc):
-        """" wraper """
-        self._redis.incr(key)
-        return method(self, *abc, **kwabc)
-    return wrapper
+    def store(self, data: Union[str, bytes, int, float]) -> str:
+        key = str(uuid.uuid4())
+        self._redis.set(key, data)
+        return key
