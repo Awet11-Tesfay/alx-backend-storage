@@ -13,6 +13,6 @@ def count(method: callable) -> callable:
     @wraps(method)
     def wrapper(self, *abc, **kwabc):
         """" wraper """
-        self._redis.inc(key)
+        self._redis.incr(key)
         return method(self, *abc, **kwabc)
     return wrapper
