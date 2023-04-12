@@ -6,7 +6,7 @@ from typing import Union, Optional, Callable
 from uuid import uuid
 
 
-def count(method: callable) -> callable:
+def count_calls(method: callable) -> callable:
     """ create store method """
     key = method.__qualname__
 
