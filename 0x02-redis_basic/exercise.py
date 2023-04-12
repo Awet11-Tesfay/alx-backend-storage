@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-""" creating a catche in the __int__ method store an instance of the Redis """
+""" Tasks - Redis """
+
 import redis
-from functools import wraps
 from typing import Union, Optional, Callable
-from uuid import uuid
+from uuid import uuid4, UUID
+from functools import wraps
 
 
 def count_calls(method: Callable) -> Callable:
