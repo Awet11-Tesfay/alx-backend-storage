@@ -6,12 +6,13 @@ from typing import Union, Optional, Callable
 from uuid import uuid
 
 
-def count(method):
+def count(method: callable) -> callable:
     """ create store method """
     key = method.__qualname__
 
     @wraps(method)
     def wrapper(self, *abc, **kwabc):
+        """" wraper """
         self._redis.inc(key)
         return method(self, *abc, **kwabc)
     return wrapper
