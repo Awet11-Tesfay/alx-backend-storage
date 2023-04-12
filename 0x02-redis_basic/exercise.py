@@ -9,10 +9,12 @@ from uuid import uuid
 class Cache:
     """ class cache """
     def __init__(self):
+        """ redis """
         self._redis = redis.Redis()
         self._redis.flushdb()
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
+        """ random key using uuid """
         key = str(uuid.uuid4())
         self._redis.set(key, data)
         return key
